@@ -3,7 +3,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { getSlides } from "./content";
-import "./presentation.css";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -63,6 +62,9 @@ const uiText = {
       "Pengalaman belajar interaktif tentang zona laut dalam untuk mengenal kehidupan di bawah permukaan laut.",
     footerBack: "Kembali ke permukaan",
     footerCopyright: "Proyek media pembelajaran · Eksplorasi laut dalam",
+    footerConnect: "TEMUKAN SAYA",
+    footerGithub: "GitHub",
+    footerInstagram: "Instagram",
   },
   en: {
     switchLabel: "Choose language",
@@ -116,6 +118,9 @@ const uiText = {
       "An interactive learning experience about deep-ocean zones and the life beneath the surface.",
     footerBack: "Back to the surface",
     footerCopyright: "Learning media project · Deep-ocean exploration",
+    footerConnect: "FIND ME",
+    footerGithub: "GitHub",
+    footerInstagram: "Instagram",
   },
 };
 const BASE = import.meta.env.BASE_URL;
@@ -564,25 +569,74 @@ function Footer() {
         </div>
 
         <div className="footer-details">
-          <div className="footer-brand-block">
-            <a href="#home" className="footer-brand font-display">
-              INTO THE DEEP<span>.</span>
-            </a>
-            <p>{ui.footerProjectDescription}</p>
+          {/* BRAND BLOCK — BAGIAN ATAS */}
+          <div className="footer-brand-block flex items-center gap-5">
+            <img
+              src={`./deep_logo.png`}
+              alt="Logo Into the Deep"
+              className="h-30 w-30 rounded-2xl shrink-0 object-contain"
+            />
+
+            <div>
+              <a href="#home" className="footer-brand font-display">
+                INTO THE DEEP<span>.</span>
+              </a>
+              <p className="mt-2 max-w-xs text-sm font-light leading-7 text-[var(--soft)]">
+                {ui.footerProjectDescription}
+              </p>
+            </div>
           </div>
-          <div className="footer-links-block">
-            <p className="footer-label">{ui.footerExplore}</p>
-            <nav className="footer-links" aria-label={ui.footerExplore}>
-              {links.map((link) => (
-                <a key={link.href} href={link.href}>
-                  {link.label}
+
+          {/* SEMUA INFORMASI LAIN DI BAWAH BRAND */}
+          <div className="footer-lower-grid">
+            <div className="footer-links-block">
+              <p className="footer-label">{ui.footerExplore}</p>
+              <nav className="footer-links" aria-label={ui.footerExplore}>
+                {links.map((link) => (
+                  <a key={link.href} href={link.href}>
+                    {link.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+
+            <div className="footer-about-block">
+              <p className="footer-label">{ui.footerProject}</p>
+              <p>{ui.footerCopyright}</p>
+            </div>
+
+            <div className="footer-social-block">
+              <p className="footer-label">{ui.footerConnect}</p>
+              <div className="footer-social-links">
+                <a
+                  href="https://github.com/USERNAME"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {/* GitHub icon */}
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 6v-3.9a3.4 3.4 0 0 0-.9-2.7c3-.3 6.2-1.5 6.2-6.7a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6S17.6 1.2 14 3.6a13 13 0 0 0-7 0C3.4 1.2 2.2 1.5 2.2 1.5a4.8 4.8 0 0 0-.1 3.6A5.2 5.2 0 0 0 .7 8.7c0 5.2 3.2 6.4 6.2 6.7A3.4 3.4 0 0 0 6 18.1V22" />
+                  </svg>
+                  <span>{ui.footerGithub}</span>
+                  <span className="social-arrow">↗</span>
                 </a>
-              ))}
-            </nav>
-          </div>
-          <div className="footer-about-block">
-            <p className="footer-label">{ui.footerProject}</p>
-            <p>{ui.footerCopyright}</p>
+
+                <a
+                  href="https://www.instagram.com/USERNAME/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {/* Instagram icon */}
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r=".8" className="social-dot" />
+                  </svg>
+                  <span>{ui.footerInstagram}</span>
+                  <span className="social-arrow">↗</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -728,16 +782,14 @@ function Presentation() {
           duration: 1,
           stagger: 0.3,
         });
-        gsap.utils
-          .toArray("[data-reveal]")
-          .forEach((el) =>
-            gsap.from(el, {
-              y: 30,
-              autoAlpha: 0,
-              duration: 0.7,
-              scrollTrigger: { trigger: el, start: "top 85%", once: true },
-            }),
-          );
+        gsap.utils.toArray("[data-reveal]").forEach((el) =>
+          gsap.from(el, {
+            y: 30,
+            autoAlpha: 0,
+            duration: 0.7,
+            scrollTrigger: { trigger: el, start: "top 85%", once: true },
+          }),
+        );
         gsap.from(".chain-item", {
           autoAlpha: 0,
           x: -30,
