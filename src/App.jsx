@@ -609,7 +609,7 @@ function Footer() {
               <p className="footer-label">{ui.footerConnect}</p>
               <div className="footer-social-links">
                 <a
-                  href="https://github.com/USERNAME"
+                  href="https://github.com/gallant4649"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -622,7 +622,7 @@ function Footer() {
                 </a>
 
                 <a
-                  href="https://www.instagram.com/USERNAME/"
+                  href="https://www.instagram.com/gallant_4649/"
                   target="_blank"
                   rel="noreferrer"
                 >
