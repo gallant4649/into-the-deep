@@ -248,15 +248,3 @@ main .ocean-atmosphere { position: absolute; inset: 0; z-index: -1;
   .footer-links { grid-template-columns: 1fr 1fr; }
   .footer-bottom { flex-direction: column; font-size: .58rem; }
 }
-
-
-/* Social links — GitHub & Instagram */
-.footer-social-links { display: flex; flex-direction: column; gap: .8rem; }
-.footer-social-links a { display: inline-flex; width: fit-content; align-items: center; gap: .7rem; color: var(--soft); text-decoration: none; font-size: .85rem; transition: color .2s ease, transform .2s ease; }
-.footer-social-links a:hover { color: var(--cyan); transform: translateX(4px); }
-.footer-social-links svg { width: 1.15rem; height: 1.15rem; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.footer-social-links a:first-child svg path { fill: currentColor; stroke: none; }
-.footer-social-links .social-dot { fill: currentColor; stroke: none; }
-.footer-social-links .social-arrow { margin-left: .25rem; font-size: .95rem; opacity: .65; }
-@media (max-width: 800px) { .footer-social-block { grid-column: 2; } }
-@media (max-width: 520px) { .footer-social-block { grid-column: auto; } }

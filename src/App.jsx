@@ -63,9 +63,6 @@ const uiText = {
       "Pengalaman belajar interaktif tentang zona laut dalam untuk mengenal kehidupan di bawah permukaan laut.",
     footerBack: "Kembali ke permukaan",
     footerCopyright: "Proyek media pembelajaran · Eksplorasi laut dalam",
-    footerConnect: "TEMUKAN SAYA",
-    footerGithub: "GitHub",
-    footerInstagram: "Instagram",
   },
   en: {
     switchLabel: "Choose language",
@@ -119,9 +116,6 @@ const uiText = {
       "An interactive learning experience about deep-ocean zones and the life beneath the surface.",
     footerBack: "Back to the surface",
     footerCopyright: "Learning media project · Deep-ocean exploration",
-    footerConnect: "FIND ME",
-    footerGithub: "GitHub",
-    footerInstagram: "Instagram",
   },
 };
 const BASE = import.meta.env.BASE_URL;
@@ -589,36 +583,6 @@ function Footer() {
           <div className="footer-about-block">
             <p className="footer-label">{ui.footerProject}</p>
             <p>{ui.footerCopyright}</p>
-          </div>
-          <div className="footer-social-block">
-            <p className="footer-label">{ui.footerConnect}</p>
-            <div className="footer-social-links">
-              {/* Ganti USERNAME dengan username akunmu sendiri. */}
-              <a
-                href="https://github.com/gallant4649"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 6v-3.9a3.4 3.4 0 0 0-.9-2.7c3-.3 6.2-1.5 6.2-6.7a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6S17.6 1.2 14 3.6a13 13 0 0 0-7 0C3.4 1.2 2.2 1.5 2.2 1.5a4.8 4.8 0 0 0-.1 3.6A5.2 5.2 0 0 0 .7 8.7c0 5.2 3.2 6.4 6.2 6.7A3.4 3.4 0 0 0 6 18.1V22" />
-                </svg>
-                <span>{ui.footerGithub}</span>
-                <span className="social-arrow">↗</span>
-              </a>
-              <a
-                href="https://www.instagram.com/gallant_4649/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="5" />
-                  <circle cx="12" cy="12" r="4" />
-                  <circle cx="17.5" cy="6.5" r=".8" className="social-dot" />
-                </svg>
-                <span>{ui.footerInstagram}</span>
-                <span className="social-arrow">↗</span>
-              </a>
-            </div>
           </div>
         </div>
 
